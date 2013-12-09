@@ -5,11 +5,10 @@ Elasticsearch template and script for zabbix 2.0
 
 This project is a fork of Elasticsearch template from zabbix-grab-bag
 
-Now forked again - LOL
-
 https://github.com/untergeek/zabbix-grab-bag
 
-These are made available by me under an Apache 2.0 license.
+Now forked again - serialsito/Elasticsearch-zabbix
+
 
 http://www.apache.org/licenses/LICENSE-2.0.html
 
@@ -19,11 +18,15 @@ Dependencies
  - it needs pyes to work https://pypi.python.org/pypi/pyes/
  - pyes is a connector to use elasticsearch from python.
 
+This involved for me:
+apt-get install pip
+pip install pyes
 
-How it works for Debian/Ubuntu (at least)
+
+How it works for Debian/Ubuntu
 =============
 
-- Put ESzabbix.py in /etc/zabbix/externalscripts/ in the zabbix node
+- Put ESzabbix.py in /etc/zabbix/externalscripts/ in the zabbix node. You may need to create this directory.
 
 - Put ESzabbix.userparm in the zabbix include parameters dir; "/etc/zabbix/zabbix_agentd.d"
 
