@@ -5,6 +5,8 @@ Elasticsearch template and script for zabbix 2.0
 
 This project is a fork of Elasticsearch template from zabbix-grab-bag
 
+Now forked again - LOL
+
 https://github.com/untergeek/zabbix-grab-bag
 
 These are made available by me under an Apache 2.0 license.
@@ -12,20 +14,26 @@ These are made available by me under an Apache 2.0 license.
 http://www.apache.org/licenses/LICENSE-2.0.html
 
 
-How it works
+Dependencies
+=============
+ - it needs pyes to work https://pypi.python.org/pypi/pyes/
+ - pyes is a connector to use elasticsearch from python.
+
+
+How it works for Debian/Ubuntu (at least)
 =============
 
-- Put ESzabbix.py in /opt/zabbix/externalscripts/ in the zabbix node
+- Put ESzabbix.py in /etc/zabbix/externalscripts/ in the zabbix node
 
-- Put ESzabbix.userparm in the zabbix include parameters dir, in this case "/opt/zabbix/agent_include"
+- Put ESzabbix.userparm in the zabbix include parameters dir; "/etc/zabbix/zabbix_agentd.d"
 
 - Import ESzabbix_templates.xml to zabbix server
 
+- Add the following MACRO to the Host when attaching the template:  {$NODENAME}
+
+
 Specs
 =====
-
-
-The items here are for monitoring Elasticsearch (presumably for logstash).
 
 The template xml file actually contains three templates:
 
@@ -35,7 +43,7 @@ The template xml file actually contains three templates:
 
 3. Elasticsearch Service (ES service status)
 
-The node name is expected as a host-level macro {$NODENAME}
+
 
 There are triggers assigned for the cluster state:
 
